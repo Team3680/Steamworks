@@ -2,23 +2,25 @@
 package org.usfirst.frc.team3680.robot;
 
 import org.usfirst.frc.team3680.robot.subsystems.DriveSubsystem;
+import org.usfirst.frc.team3680.robot.subsystems.ShooterSubsystem;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.CameraServer;
 
 public class Robot extends IterativeRobot {
 	
 	public static DriveSubsystem driveTrain;
+	public static ShooterSubsystem shooter;
 	public static OI oi;
 
 	@Override
 	public void robotInit() {
 		driveTrain = new DriveSubsystem();
+		shooter = new ShooterSubsystem();
 		oi = new OI();
+    	CameraServer.getInstance().startAutomaticCapture(0);
 	}
 
 	@Override

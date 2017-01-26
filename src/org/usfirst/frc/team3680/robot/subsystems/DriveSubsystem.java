@@ -7,18 +7,16 @@ import org.usfirst.frc.team3680.robot.commands.DriveTeleop;
 
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Victor;
-import edu.wpi.first.wpilibj.Spark;
 
 public class DriveSubsystem extends Subsystem {
 	
-	private Spark left1, right1;
-	private Victor left2, right2;
+	private Victor left1, left2, right1, right2;
 	private RobotDrive robotDrive;
 
 	public DriveSubsystem() {
-		left1 = new Spark(RobotMap.driveController1ID); // Front Left
+		left1 = new Victor(RobotMap.driveController1ID); // Front Left
 		left2 = new Victor(RobotMap.driveController2ID); // Rear Left
-		right1 = new Spark(RobotMap.driveController3ID); // Front Right
+		right1 = new Victor(RobotMap.driveController3ID); // Front Right
 		right2 = new Victor(RobotMap.driveController4ID); // Rear Right
 		left1.set(left2.get());
 		right2.set(right1.get());
@@ -27,7 +25,7 @@ public class DriveSubsystem extends Subsystem {
 	}
 	
 	public void arcadeDrive(double forward, double rotation) {
-		robotDrive.arcadeDrive(forward, rotation);
+		robotDrive.arcadeDrive(rotation, forward);
 		left1.set(left2.get());
 		right2.set(right1.get());
 	}
