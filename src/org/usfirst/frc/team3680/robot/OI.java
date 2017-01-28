@@ -14,7 +14,7 @@ public class OI {
 		
 		// Right Joystick (ex. setJoystickButtonWhenPressedCommand())
 		setJoystickButtonWhilePressedCommand(rightStick, 1, new Shoot());
-		
+
 		// Left Joystick (ex. setJoystickButtonWhenPressedCommand())
 		
 	}

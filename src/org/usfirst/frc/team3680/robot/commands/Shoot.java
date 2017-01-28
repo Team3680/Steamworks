@@ -1,5 +1,6 @@
 package org.usfirst.frc.team3680.robot.commands;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc.team3680.robot.Robot;
@@ -12,6 +13,8 @@ public class Shoot extends Command {
     }
 
     protected void initialize() {
+    	Robot.shooter.releaseFuel(true);
+    	Timer.delay(1);
     }
 
     protected void execute() {
@@ -27,6 +30,6 @@ public class Shoot extends Command {
     }
 
     protected void interrupted() {
-    	Robot.shooter.runShooter(0);
+    	end();
     }
 }

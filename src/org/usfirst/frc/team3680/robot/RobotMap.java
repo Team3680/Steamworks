@@ -11,6 +11,15 @@ public class RobotMap {
 	// Shooter Subsystem Motor Controller (PWM)
 	public static final int shooterControllerID = 4;
 	
+	// Shooter Release Relay (Relay)
+	public static final int shooterReleaseID = 0;
+	
+	// Intake Subsystem Motor Controller (PWM)
+	public static final int intakeControllerID = 5;
+	
+	// Upper Switch (DIO)
+	public static final int upperSwitchID = 0;
+	
 	// Drive Subsystem Constants
 	public static final double driveSpeedTeleop = 1; // Percentage
 	public static final double driveSpeedAuto = 0.8; // Percentage
@@ -21,4 +30,5 @@ public class RobotMap {
 	// Joystick Ports
 	public static final int leftStickPort = 0;
 	public static final int rightStickPort = 1;
+	
 }

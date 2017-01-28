@@ -21,7 +21,6 @@ public class DriveSubsystem extends Subsystem {
 		left1.set(left2.get());
 		right2.set(right1.get());
 		robotDrive = new RobotDrive(left2, right1);
-		
 	}
 	
 	public void arcadeDrive(double forward, double rotation) {
@@ -44,7 +43,6 @@ public class DriveSubsystem extends Subsystem {
 		right1.set(speed);
 		right2.set(speed);
 	}
-	
 
     public void initDefaultCommand() {
     	setDefaultCommand(new DriveTeleop());
