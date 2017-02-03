@@ -1,6 +1,7 @@
 
 package org.usfirst.frc.team3680.robot;
 
+import org.usfirst.frc.team3680.robot.subsystems.CameraServoSubsystem;
 import org.usfirst.frc.team3680.robot.subsystems.DriveSubsystem;
 import org.usfirst.frc.team3680.robot.subsystems.IntakeSubsystem;
 import org.usfirst.frc.team3680.robot.subsystems.ShooterSubsystem;
@@ -15,6 +16,7 @@ public class Robot extends IterativeRobot {
 	public static DriveSubsystem driveTrain;
 	public static ShooterSubsystem shooter;
 	public static IntakeSubsystem intake;
+	public static CameraServoSubsystem cameraServo;
 	public static OI oi;
 
 	@Override
@@ -22,6 +24,7 @@ public class Robot extends IterativeRobot {
 		driveTrain = new DriveSubsystem();
 		shooter = new ShooterSubsystem();
 		intake = new IntakeSubsystem();
+		cameraServo = new CameraServoSubsystem();
 		oi = new OI();
 		
     	CameraServer.getInstance().addServer("cam0");
@@ -41,6 +44,7 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void autonomousInit() {
+
 	}
 
 	@Override

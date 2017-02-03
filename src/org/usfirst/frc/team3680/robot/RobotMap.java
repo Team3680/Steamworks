@@ -17,6 +17,9 @@ public class RobotMap {
 	// Intake Subsystem Motor Controller (PWM)
 	public static final int intakeControllerID = 5;
 	
+	// Camera Servo (PWM)
+	public static final int servoID = 9;
+	
 	// Upper Switch (DIO)
 	public static final int upperSwitchID = 0;
 	
