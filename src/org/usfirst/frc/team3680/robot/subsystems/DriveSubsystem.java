@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import org.usfirst.frc.team3680.robot.RobotMap;
 import org.usfirst.frc.team3680.robot.commands.DriveTeleop;
 
+import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Victor;
 
@@ -12,6 +13,7 @@ public class DriveSubsystem extends Subsystem {
 	
 	private Victor left1, left2, right1, right2;
 	private RobotDrive robotDrive;
+	public ADXRS450_Gyro gyro;
 
 	public DriveSubsystem() {
 		left1 = new Victor(RobotMap.driveController1ID); // Front Left
@@ -21,6 +23,7 @@ public class DriveSubsystem extends Subsystem {
 		left1.set(left2.get());
 		right2.set(right1.get());
 		robotDrive = new RobotDrive(left2, right1);
+		gyro = new ADXRS450_Gyro();
 	}
 	
 	public void arcadeDrive(double forward, double rotation) {
@@ -42,6 +45,10 @@ public class DriveSubsystem extends Subsystem {
 	public void moveRightSide(double speed) {
 		right1.set(speed);
 		right2.set(speed);
+	}
+	
+	public double getGyroAngle(){
+		return gyro.getAngle();
 	}
 
     public void initDefaultCommand() {
