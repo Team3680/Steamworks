@@ -2,36 +2,43 @@ package org.usfirst.frc.team3680.robot.subsystems;
 
 import org.usfirst.frc.team3680.robot.RobotMap;
 
-import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class ShooterSubsystem extends Subsystem {
 	
 	private Talon shooterController;
-	private Relay release;
+	private Timer shooterTimer;
 	
 	public ShooterSubsystem() {
 		shooterController = new Talon(RobotMap.shooterControllerID);
-		release = new Relay(RobotMap.shooterReleaseID);
 	}
 	
 	public void runShooter(double speed) {
 		shooterController.set(speed);
 	}
 	
-	// releaseFuel does not work yet. TODO: Try different PWM cable to see if that is the issue.
+	public void startTimer() {
+		shooterTimer.start();
+	}
 	
-	public void releaseFuel(boolean released){
-		if (released = true) {
-			release.set(Relay.Value.kForward);
-		} else if (released = false) {
-			release.set(Relay.Value.kReverse);
+	public void stopTimer() {
+		shooterTimer.stop();
+	}
+	
+	public void resetTimer() {
+		shooterTimer.reset();
+	}
+	
+	public boolean shooterReady() {
+		if(shooterTimer.get() < 2) {
+			return false;
 		} else {
-			release.set(Relay.Value.kOff);
+			return true;
 		}
 	}
-
+	
     public void initDefaultCommand() {
     	
     }

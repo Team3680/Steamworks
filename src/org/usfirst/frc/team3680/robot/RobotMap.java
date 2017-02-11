@@ -11,11 +11,11 @@ public class RobotMap {
 	// Shooter Subsystem Motor Controller (PWM)
 	public static final int shooterControllerID = 4;
 	
-	// Shooter Release Relay (Relay)
-	public static final int shooterReleaseID = 0;
-	
 	// Intake Subsystem Motor Controller (PWM)
 	public static final int intakeControllerID = 5;
+	
+	// Primer Servo (PWM)
+	public static final int primerServoID = 8;
 	
 	// Camera Servo (PWM)
 	public static final int servoID = 9;

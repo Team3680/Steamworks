@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class OI {
-	private Joystick rightStick;
+	public Joystick rightStick;
 	
 	public OI() {
 		rightStick = new Joystick(RobotMap.rightStickPort);
