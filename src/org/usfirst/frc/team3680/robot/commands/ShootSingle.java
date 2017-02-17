@@ -6,9 +6,9 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc.team3680.robot.Robot;
 import org.usfirst.frc.team3680.robot.RobotMap;
 
-public class Shoot extends Command {
+public class ShootSingle extends Command {
 
-    public Shoot() {
+    public ShootSingle() {
         requires(Robot.shooter);
         requires(Robot.primer);
     }
@@ -16,21 +16,18 @@ public class Shoot extends Command {
     protected void initialize() {
     	Robot.shooter.runShooter(-RobotMap.shooterSpeed);
     	Timer.delay(3);
+    	Robot.primer.primerUp();
+		Timer.delay(0.5);
+		Robot.primer.primerDown();
+		Timer.delay(0.5);
     }
 
     protected void execute() {
-    		Robot.primer.primerUp();
-    		Timer.delay(0.5);
-    		Robot.primer.primerDown();
-    		Timer.delay(0.5);
+    		
     }
 
     protected boolean isFinished() {
-        if(Robot.oi.rightStick.getRawButton(1) == false){
-        	return true;
-        } else {
-        	return false;
-        }
+        return false;
     }
 
     protected void end() {

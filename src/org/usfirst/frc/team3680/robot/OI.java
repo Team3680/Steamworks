@@ -1,8 +1,11 @@
 package org.usfirst.frc.team3680.robot;
 
+import org.usfirst.frc.team3680.robot.commands.PrimeFuel;
 import org.usfirst.frc.team3680.robot.commands.Shoot;
+import org.usfirst.frc.team3680.robot.commands.ShootSingle;
 import org.usfirst.frc.team3680.robot.commands.SpinCameraBackward;
 import org.usfirst.frc.team3680.robot.commands.SpinCameraForward;
+import org.usfirst.frc.team3680.robot.commands.SpinShooter;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -18,6 +21,9 @@ public class OI {
 		setJoystickButtonWhilePressedCommand(rightStick, 1, new Shoot());
 		setJoystickButtonWhenPressedCommand(rightStick, 8, new SpinCameraForward());
 		setJoystickButtonWhenPressedCommand(rightStick, 9, new SpinCameraBackward());
+		setJoystickButtonWhenPressedCommand(rightStick, 6, new PrimeFuel());
+		setJoystickButtonWhenPressedCommand(rightStick, 7, new ShootSingle());
+		setJoystickButtonWhilePressedCommand(rightStick, 6, new SpinShooter());
 		// Left Joystick (ex. setJoystickButtonWhenPressedCommand())
 		
 	}

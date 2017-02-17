@@ -9,21 +9,18 @@ public class SpinShooter extends Command {
 
     public SpinShooter() {
         requires(Robot.shooter);
+        requires(Robot.primer);
     }
 
     protected void initialize() {
+    	Robot.shooter.runShooter(-RobotMap.shooterSpeed);
     }
 
     protected void execute() {
-    	Robot.shooter.runShooter(RobotMap.shooterSpeed);
     }
 
     protected boolean isFinished() {
-        if(Robot.oi.rightStick.getRawButton(1) == false){
-        	return true;
-        } else {
-        	return false;
-        }
+        return false;
     }
 
     protected void end() {

@@ -1,5 +1,4 @@
 package org.usfirst.frc.team3680.robot;
-
 public class RobotMap {
 	
 	// Drive Subsystem Motor Controllers (PWM)
@@ -12,7 +11,7 @@ public class RobotMap {
 	public static final int shooterControllerID = 4;
 	
 	// Intake Subsystem Motor Controller (PWM)
-	public static final int intakeControllerID = 5;
+	public static final int intakeControllerID = 6;
 	
 	// Primer Servo (PWM)
 	public static final int primerServoID = 8;
