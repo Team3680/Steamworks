@@ -6,18 +6,18 @@ import org.usfirst.frc.team3680.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.DigitalInput;
 
-public class IntakeSubsystem extends Subsystem {
+public class HexSubsystem extends Subsystem {
 	
-	private Spark intakeController;
+	private Spark hexController;
 	private DigitalInput upperSwitch;
 
-	public IntakeSubsystem() {
-		intakeController = new Spark(RobotMap.intakeControllerID);
+	public HexSubsystem() {
+		hexController = new Spark(RobotMap.intakeControllerID);
 		upperSwitch = new DigitalInput(RobotMap.upperSwitchID);
 	}
 	
-	public void runIntake(double speed) {
-		intakeController.set(speed);
+	public void runHex(double speed) {
+		hexController.set(speed);
 	}
 	
 	public boolean climbingLimitSwitchCheck() {

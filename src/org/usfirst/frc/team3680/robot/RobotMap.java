@@ -23,8 +23,8 @@ public class RobotMap {
 	public static final int upperSwitchID = 0;
 	
 	// Drive Subsystem Constants
-	public static final double driveSpeedTeleop = 1; // Percentage
-	public static final double driveSpeedAuto = 0.8; // Percentage
+	public static final double driveSpeedTeleop = 0.75; // Percentage
+	public static final double driveSpeedAuto = 0.75; // Percentage
 	
 	// Shooter Subsystem Constants
 	public static final double shooterSpeed = 1; //Percentage

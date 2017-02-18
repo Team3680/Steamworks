@@ -2,7 +2,7 @@ package org.usfirst.frc.team3680.robot;
 
 import org.usfirst.frc.team3680.robot.subsystems.CameraServoSubsystem;
 import org.usfirst.frc.team3680.robot.subsystems.DriveSubsystem;
-import org.usfirst.frc.team3680.robot.subsystems.IntakeSubsystem;
+import org.usfirst.frc.team3680.robot.subsystems.HexSubsystem;
 import org.usfirst.frc.team3680.robot.subsystems.PrimerSubsystem;
 import org.usfirst.frc.team3680.robot.subsystems.ShooterSubsystem;
 
@@ -21,7 +21,7 @@ public class Robot extends IterativeRobot {
 	
 	public static DriveSubsystem driveTrain;
 	public static ShooterSubsystem shooter;
-	public static IntakeSubsystem intake;
+	public static HexSubsystem hex;
 	public static CameraServoSubsystem cameraServo;
 	public static PrimerSubsystem primer;
 	public static OI oi;
@@ -38,7 +38,7 @@ public class Robot extends IterativeRobot {
 	public void robotInit() {
 		driveTrain = new DriveSubsystem();
 		shooter = new ShooterSubsystem();
-		intake = new IntakeSubsystem();
+		hex = new HexSubsystem();
 		cameraServo = new CameraServoSubsystem();
 		primer = new PrimerSubsystem();
 		oi = new OI();

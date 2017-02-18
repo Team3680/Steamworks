@@ -1,5 +1,7 @@
 package org.usfirst.frc.team3680.robot;
 
+import org.usfirst.frc.team3680.robot.commands.HexAnticlockwise;
+import org.usfirst.frc.team3680.robot.commands.HexClockwise;
 import org.usfirst.frc.team3680.robot.commands.PrimeFuel;
 import org.usfirst.frc.team3680.robot.commands.Shoot;
 import org.usfirst.frc.team3680.robot.commands.ShootSingle;
@@ -16,15 +18,15 @@ public class OI {
 	
 	public OI() {
 		rightStick = new Joystick(RobotMap.rightStickPort);
-		
-		// Right Joystick (ex. setJoystickButtonWhenPressedCommand())
-		setJoystickButtonWhilePressedCommand(rightStick, 1, new Shoot());
+
+		setJoystickButtonWhilePressedCommand(rightStick, 5, new Shoot());
 		setJoystickButtonWhenPressedCommand(rightStick, 8, new SpinCameraForward());
 		setJoystickButtonWhenPressedCommand(rightStick, 9, new SpinCameraBackward());
 		setJoystickButtonWhenPressedCommand(rightStick, 6, new PrimeFuel());
 		setJoystickButtonWhenPressedCommand(rightStick, 7, new ShootSingle());
-		setJoystickButtonWhilePressedCommand(rightStick, 6, new SpinShooter());
-		// Left Joystick (ex. setJoystickButtonWhenPressedCommand())
+		setJoystickButtonWhilePressedCommand(rightStick, 4, new SpinShooter());
+		setJoystickButtonWhilePressedCommand(rightStick, 11, new HexClockwise());
+		setJoystickButtonWhilePressedCommand(rightStick, 10, new HexAnticlockwise());
 		
 	}
 	

@@ -17,22 +17,21 @@ public class ShootSingle extends Command {
     	Robot.shooter.runShooter(-RobotMap.shooterSpeed);
     	Timer.delay(3);
     	Robot.primer.primerUp();
-		Timer.delay(0.5);
+		Timer.delay(1);
 		Robot.primer.primerDown();
-		Timer.delay(0.5);
+		Timer.delay(1);
     }
 
     protected void execute() {
-    		
+    	end();
     }
 
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     protected void end() {
     	Robot.shooter.runShooter(0);
-    	Robot.primer.primerDown();
     }
 
     protected void interrupted() {

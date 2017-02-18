@@ -16,26 +16,30 @@ public class Shoot extends Command {
     protected void initialize() {
     	Robot.shooter.runShooter(-RobotMap.shooterSpeed);
     	Timer.delay(3);
+    	System.out.println("Shoot initialized");
     }
 
     protected void execute() {
     		Robot.primer.primerUp();
-    		Timer.delay(0.5);
+    		Timer.delay(1);
     		Robot.primer.primerDown();
     		Timer.delay(0.5);
+    		System.out.println("Shoot executing");
     }
 
     protected boolean isFinished() {
-        if(Robot.oi.rightStick.getRawButton(1) == false){
+        /**if(Robot.oi.rightStick.getRawButton(1) == false){
         	return true;
         } else {
         	return false;
-        }
+        }**/
+    	return true;
     }
 
     protected void end() {
     	Robot.shooter.runShooter(0);
     	Robot.primer.primerDown();
+    	System.out.println("Shoot ending");
     }
 
     protected void interrupted() {
