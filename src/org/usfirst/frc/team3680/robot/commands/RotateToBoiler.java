@@ -1,27 +1,32 @@
 package org.usfirst.frc.team3680.robot.commands;
 
 import org.usfirst.frc.team3680.robot.Robot;
-import org.usfirst.frc.team3680.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class DriveTeleop extends Command {
+public class RotateToBoiler extends Command {
 
-    public DriveTeleop() {
+    public RotateToBoiler() {
         requires(Robot.driveTrain);
     }
 
     protected void initialize() {
+    	Robot.driveTrain.arcadeDrive(0, 0.5);
     }
 
     protected void execute() {
-    	Robot.driveTrain.arcadeDrive(RobotMap.rotationSpeedTeleop * -Robot.oi.getRightX(), RobotMap.driveSpeedTeleop * -Robot.oi.getRightY());
     }
+
     protected boolean isFinished() {
-        return false;
+        if(Robot.driveTrain.getGyroAngle() > -55 && Robot.driveTrain.getGyroAngle() < -35){
+        	return true;
+        } else {
+        	return false;
+        }
     }
 
     protected void end() {
+    	Robot.driveTrain.arcadeDrive(0, 0);
     }
 
     protected void interrupted() {

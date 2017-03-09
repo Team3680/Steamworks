@@ -1,5 +1,9 @@
 package org.usfirst.frc.team3680.robot;
 
+import org.usfirst.frc.team3680.robot.commands.AutonomousDoNothing;
+import org.usfirst.frc.team3680.robot.commands.AutonomousPosition1;
+import org.usfirst.frc.team3680.robot.commands.AutonomousPosition2;
+import org.usfirst.frc.team3680.robot.commands.AutonomousPosition3;
 import org.usfirst.frc.team3680.robot.subsystems.CameraServoSubsystem;
 import org.usfirst.frc.team3680.robot.subsystems.DriveSubsystem;
 import org.usfirst.frc.team3680.robot.subsystems.HexSubsystem;
@@ -9,10 +13,12 @@ import org.usfirst.frc.team3680.robot.subsystems.ShooterSubsystem;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.Ultrasonic;
+import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.cscore.UsbCamera;
 import edu.wpi.first.wpilibj.CameraServer;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.vision.VisionThread;
 
@@ -28,6 +34,9 @@ public class Robot extends IterativeRobot {
 	public SmartDashboard dashboard;
 	public Ultrasonic ultrasonic;
 	public PowerDistributionPanel pdp;
+	
+	SendableChooser<Command> chooser = new SendableChooser<>();
+	Command autonomousCommand;
 	
 	Thread visionThread;
 
@@ -60,6 +69,14 @@ public class Robot extends IterativeRobot {
 		visionThread.start();
 		
 		ultrasonic.setAutomaticMode(true);
+		
+		chooser.addDefault("Do Nothing", new AutonomousDoNothing());
+		chooser.addObject("Position 1", new AutonomousPosition1());
+		chooser.addObject("Position 2" , new AutonomousPosition2());
+		chooser.addObject("Position 3", new AutonomousPosition3());
+		SmartDashboard.putData("Auto Mode", chooser);
+		
+		System.out.println(Robot.driveTrain.getGyroAngle());
 	}
 
 	@Override
@@ -74,7 +91,9 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void autonomousInit() {
-		
+		autonomousCommand = chooser.getSelected();
+		if (autonomousCommand != null)
+			autonomousCommand.start();
 	}
 
 	@Override

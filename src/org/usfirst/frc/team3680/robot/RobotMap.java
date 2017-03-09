@@ -25,12 +25,13 @@ public class RobotMap {
 	// Drive Subsystem Constants
 	public static final double driveSpeedTeleop = 0.75; // Percentage
 	public static final double driveSpeedAuto = 0.75; // Percentage
+	public static final double rotationSpeedTeleop = 0.75;
 	
 	// Shooter Subsystem Constants
-	public static final double shooterSpeed = 1; //Percentage
+	public static final double shooterSpeed = 0.75; //Percentage 75 IS WORK
 	
 	// Joystick Ports
-	public static final int leftStickPort = 0;
-	public static final int rightStickPort = 1;
+	public static final int leftStickPort = 1;
+	public static final int rightStickPort = 0;
 	
 }

@@ -15,8 +15,11 @@ public class ShootSingle extends Command {
 
     protected void initialize() {
     	Robot.shooter.runShooter(-RobotMap.shooterSpeed);
-    	Timer.delay(3);
+    	Timer.delay(4);
     	Robot.primer.primerUp();
+    	Robot.shooter.runShooter(0);
+    	Timer.delay(0.25);
+    	Robot.shooter.runShooter(-RobotMap.shooterSpeed);
 		Timer.delay(1);
 		Robot.primer.primerDown();
 		Timer.delay(1);
