@@ -57,7 +57,7 @@ public class Robot extends IterativeRobot {
     	driveTrain.gyro.reset();
     	
     	UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
-		camera.setExposureManual(100);
+		camera.setExposureManual(50);
 
 		visionThread = new VisionThread(camera, new GripPipeline(), gp -> {
 			synchronized (imgLock) {

@@ -11,8 +11,8 @@ public class DrivePreciseForward extends Command {
     }
 
     protected void initialize() {
-    	Robot.driveTrain.arcadeDrive(0, 0.5);
-    	setTimeout(3);
+    	Robot.driveTrain.arcadeDrive(0, 0.64);
+    	setTimeout(2.25);
     }
 
     protected void execute() {
