@@ -5,6 +5,7 @@ import org.usfirst.frc.team3680.robot.commands.AutonomousPosition1;
 import org.usfirst.frc.team3680.robot.commands.AutonomousPosition2;
 import org.usfirst.frc.team3680.robot.commands.AutonomousPosition3;
 import org.usfirst.frc.team3680.robot.subsystems.CameraServoSubsystem;
+import org.usfirst.frc.team3680.robot.subsystems.ClimberSubsystem;
 import org.usfirst.frc.team3680.robot.subsystems.DriveSubsystem;
 import org.usfirst.frc.team3680.robot.subsystems.HexSubsystem;
 import org.usfirst.frc.team3680.robot.subsystems.PrimerSubsystem;
@@ -30,6 +31,7 @@ public class Robot extends IterativeRobot {
 	public static HexSubsystem hex;
 	public static CameraServoSubsystem cameraServo;
 	public static PrimerSubsystem primer;
+	public static ClimberSubsystem climber;
 	public static OI oi;
 	public SmartDashboard dashboard;
 	public Ultrasonic ultrasonic;
@@ -50,6 +52,7 @@ public class Robot extends IterativeRobot {
 		hex = new HexSubsystem();
 		cameraServo = new CameraServoSubsystem();
 		primer = new PrimerSubsystem();
+		climber = new ClimberSubsystem();
 		oi = new OI();
 		dashboard = new SmartDashboard();
 		ultrasonic = new Ultrasonic(5,6);

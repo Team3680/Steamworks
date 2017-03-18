@@ -7,8 +7,11 @@ public class RobotMap {
 	public static final int driveController3ID = 2;
 	public static final int driveController4ID = 3;
 	
-	// Shooter Subsystem Motor Controller (PWM)
-	public static final int shooterControllerID = 4;
+	// Shooter Subsystem Motor Controller (PWM) DEPRECATED
+	public static final int shooterControllerID = 5;
+	
+	// Climber Subsystem Motor Controller (PWM)
+	public static final int climberControllerID = 4;
 	
 	// Intake Subsystem Motor Controller (PWM)
 	public static final int intakeControllerID = 6;

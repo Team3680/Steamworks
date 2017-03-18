@@ -1,5 +1,7 @@
 package org.usfirst.frc.team3680.robot;
 
+import org.usfirst.frc.team3680.robot.commands.ClimbDown;
+import org.usfirst.frc.team3680.robot.commands.ClimbUp;
 import org.usfirst.frc.team3680.robot.commands.HexAnticlockwise;
 import org.usfirst.frc.team3680.robot.commands.HexClockwise;
 import org.usfirst.frc.team3680.robot.commands.PrimeFuel;
@@ -19,14 +21,15 @@ public class OI {
 	public OI() {
 		rightStick = new Joystick(RobotMap.rightStickPort);
 
-		setJoystickButtonWhilePressedCommand(rightStick, 1, new Shoot());
-		setJoystickButtonWhenPressedCommand(rightStick, 8, new SpinCameraForward());
-		setJoystickButtonWhenPressedCommand(rightStick, 9, new SpinCameraBackward());
-		setJoystickButtonWhenPressedCommand(rightStick, 10, new PrimeFuel());
-		setJoystickButtonWhenPressedCommand(rightStick, 11, new ShootSingle());
-		setJoystickButtonWhilePressedCommand(rightStick, 4, new SpinShooter());
-		setJoystickButtonWhilePressedCommand(rightStick, 6, new HexClockwise());
-		setJoystickButtonWhilePressedCommand(rightStick, 7, new HexAnticlockwise());
+		// DEPRECATED setJoystickButtonWhilePressedCommand(rightStick, 1, new Shoot());
+		// DEPRECATED setJoystickButtonWhenPressedCommand(rightStick, 8, new SpinCameraForward());
+		// DEPRECATED setJoystickButtonWhenPressedCommand(rightStick, 9, new SpinCameraBackward());
+		// DEPRECATED setJoystickButtonWhenPressedCommand(rightStick, 10, new PrimeFuel());
+		// DEPRECATED setJoystickButtonWhenPressedCommand(rightStick, 11, new ShootSingle());
+		// DEPRECATED setJoystickButtonWhilePressedCommand(rightStick, 4, new SpinShooter());
+		// DEPRECATED setJoystickButtonWhilePressedCommand(rightStick, 6, new HexClockwise());
+		setJoystickButtonWhilePressedCommand(rightStick, 3, new ClimbUp());
+		setJoystickButtonWhilePressedCommand(rightStick, 2, new ClimbDown());
 		
 	}
 	

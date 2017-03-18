@@ -2,6 +2,7 @@ package org.usfirst.frc.team3680.robot.commands;
 
 import org.usfirst.frc.team3680.robot.Robot;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class DrivePreciseForward extends Command {
@@ -11,8 +12,10 @@ public class DrivePreciseForward extends Command {
     }
 
     protected void initialize() {
+    	setTimeout(4);
     	Robot.driveTrain.arcadeDrive(0, 0.64);
-    	setTimeout(2.25);
+    	Timer.delay(2.25);
+    	Robot.driveTrain.arcadeDrive(0, -0.25);
     }
 
     protected void execute() {
@@ -30,6 +33,7 @@ public class DrivePreciseForward extends Command {
     }
 
     protected void end() {
+    	Robot.driveTrain.arcadeDrive(0, 0);
     }
 
     protected void interrupted() {
