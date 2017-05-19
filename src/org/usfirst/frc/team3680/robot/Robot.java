@@ -1,9 +1,11 @@
 package org.usfirst.frc.team3680.robot;
 
+import org.usfirst.frc.team3680.robot.commands.AutoCenter;
 import org.usfirst.frc.team3680.robot.commands.AutonomousDoNothing;
 import org.usfirst.frc.team3680.robot.commands.AutonomousPosition1;
 import org.usfirst.frc.team3680.robot.commands.AutonomousPosition2;
 import org.usfirst.frc.team3680.robot.commands.AutonomousPosition3;
+import org.usfirst.frc.team3680.robot.commands.AutonomousPosition4;
 import org.usfirst.frc.team3680.robot.subsystems.CameraServoSubsystem;
 import org.usfirst.frc.team3680.robot.subsystems.ClimberSubsystem;
 import org.usfirst.frc.team3680.robot.subsystems.DriveSubsystem;
@@ -44,6 +46,8 @@ public class Robot extends IterativeRobot {
 
 	int objectsFound = 0;
 	private final Object imgLock = new Object();
+	public static double setSpeed1;
+	public static double setSpeed2;
 	
 	@Override
 	public void robotInit() {
@@ -73,11 +77,14 @@ public class Robot extends IterativeRobot {
 		
 		ultrasonic.setAutomaticMode(true);
 		
-		chooser.addDefault("Do Nothing", new AutonomousDoNothing());
+		chooser.addDefault("DoNothing", new AutonomousDoNothing());
 		chooser.addObject("Position 1", new AutonomousPosition1());
 		chooser.addObject("Position 2" , new AutonomousPosition2());
 		chooser.addObject("Position 3", new AutonomousPosition3());
+		chooser.addObject("Position 4", new AutonomousPosition4());
+		chooser.addObject("Auto Center", new AutoCenter());
 		SmartDashboard.putData("Auto Mode", chooser);
+
 		
 		System.out.println(Robot.driveTrain.getGyroAngle());
 	}
@@ -106,7 +113,8 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void teleopInit() {
-
+		setSpeed1 = SmartDashboard.getNumber("speed1", setSpeed1);
+		setSpeed2 = SmartDashboard.getNumber("speed2", setSpeed2);
 	}
 
 	@Override

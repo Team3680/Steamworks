@@ -5,14 +5,14 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc.team3680.robot.Robot;
 import org.usfirst.frc.team3680.robot.RobotMap;
 
-public class ClimbDown extends Command {
+public class ClimbDown2 extends Command {
 
-    public ClimbDown() {
+    public ClimbDown2() {
         requires(Robot.climber);
     }
 
     protected void initialize() {
-    	Robot.climber.runClimber(-0.25, -0.25);
+    	Robot.climber.runClimber(-1,-1);
     }
 
     protected void execute() {

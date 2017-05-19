@@ -1,7 +1,9 @@
 package org.usfirst.frc.team3680.robot;
 
 import org.usfirst.frc.team3680.robot.commands.ClimbDown;
+import org.usfirst.frc.team3680.robot.commands.ClimbDown2;
 import org.usfirst.frc.team3680.robot.commands.ClimbUp;
+import org.usfirst.frc.team3680.robot.commands.ClimbUp2;
 import org.usfirst.frc.team3680.robot.commands.HexAnticlockwise;
 import org.usfirst.frc.team3680.robot.commands.HexClockwise;
 import org.usfirst.frc.team3680.robot.commands.PrimeFuel;
@@ -17,9 +19,11 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class OI {
 	public Joystick rightStick;
+	public Joystick leftStick;
 	
 	public OI() {
 		rightStick = new Joystick(RobotMap.rightStickPort);
+		leftStick = new Joystick(1);
 
 		// DEPRECATED setJoystickButtonWhilePressedCommand(rightStick, 1, new Shoot());
 		// DEPRECATED setJoystickButtonWhenPressedCommand(rightStick, 8, new SpinCameraForward());
@@ -30,7 +34,8 @@ public class OI {
 		// DEPRECATED setJoystickButtonWhilePressedCommand(rightStick, 6, new HexClockwise());
 		setJoystickButtonWhilePressedCommand(rightStick, 3, new ClimbUp());
 		setJoystickButtonWhilePressedCommand(rightStick, 2, new ClimbDown());
-		
+		setJoystickButtonWhilePressedCommand(rightStick, 4, new ClimbUp2());
+		setJoystickButtonWhilePressedCommand(rightStick, 5, new ClimbDown2());
 	}
 	
 	private void setJoystickButtonWhilePressedCommand(Joystick joystick, int button, Command command) {

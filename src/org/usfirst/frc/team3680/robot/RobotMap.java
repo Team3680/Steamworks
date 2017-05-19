@@ -14,7 +14,16 @@ public class RobotMap {
 	public static final int climberControllerID = 4;
 	
 	// Intake Subsystem Motor Controller (PWM)
-	public static final int intakeControllerID = 6;
+	public static final int intakeControllerID = 7;
+	
+	// Controller Speed 1 Climber (Speed)
+	public static final double controllerSpeed1 = 0.25;
+	
+	// Controller Speed 2 Climber (Speed)
+	public static final double controllerSpeed2 = 0.25;
+	
+	// Climber Subsystem Motor Controller (PWM 6)
+	public static final int climberControllerID2 = 6;
 	
 	// Primer Servo (PWM)
 	public static final int primerServoID = 8;
